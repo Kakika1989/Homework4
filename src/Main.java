@@ -1,16 +1,44 @@
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-        int salary = 65_535;
-        int total = 0;
+
+        //Задача 1
+
         int i = 0;
-        for (; total < 1_000_000; i++) {
-            total = total + total/100;
-            total = total + salary;
-            if (i % 5 == 0) {
-                System.out.println("Месяц  " + i + " Итого " + total);
+
+        while (i < 10) {
+            System.out.print(++i + " ");
+        }
+        System.out.println();
+
+        for (; i > 0; i--) {
+            System.out.print(i + " ");
+        }
+
+
+        // Задача 2
+        System.out.println();
+
+        int day = 5;
+
+        while (day <= 31) {
+            day += 7;
+            System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
+        }
+
+        // Задача 3
+        System.out.println();
+
+        int currentYear = LocalDate.now().getYear();
+
+        int start = currentYear - 200;
+        int end = currentYear + 100;
+
+        for (int year = start; year <= end; year++) {
+            if (year % 79 == 0) {
+                System.out.println(year);
             }
         }
-            System.out.println(total);
-
-       }
-}
+     }
+    }
